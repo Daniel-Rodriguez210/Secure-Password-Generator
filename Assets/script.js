@@ -66,39 +66,30 @@ if (specialCharacters === true) {
 
 if (lowerCase === true) {
   selections = lowerC;
-  console.log(selections);
 }
 if (upperCase === true) {
-  selected.push(upperC);
-  
+  selections = lowerC.concat(upperC); 
 }
 if (numbers === true) {
-  selected.push(numbersC);
-  
+  selections = lowerC.concat(numbersC); 
 }
 if (specialCharacters === true) {
-  selected.push(specialC);
-  
+  selections = lowerC.concat(specialC); 
 }
 
 
 
 for (i = 0; i < userInput; i++) {
-  var random = selected[Math.floor(Math.random() * selected.length)];
-  console.log(random);
-  
-  
-  
-}
+  var random = selections[Math.floor(Math.random() * selections.length)];
 
+  }
+  console.log(random)
+document.getElementById("password").value = random;
 };
 // Write password to the #password input
 function writePassword() {
   generatePassword();
-  
-  
-
-}
+  }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);{}
