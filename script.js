@@ -23,7 +23,33 @@ function getPasswordOptions() {
       alert("Password length must be less than 129 characters");
       return;
     }
+  var hasSpecialCharacters = confirm("Click OK to confirm including special characters");
+  var hasNumericCharacters = confirm("Click OK to confirm including numeric characters.");
+  var hasLowerCasedCharacters = confirm("Click OK to confirm including lowercase characters.");
+  var hasUpperCasedCharacters = confirm("Click OK to confirm including uppercase characters.");
+
+  if (
+    hasSpecialCharacters === false &&
+    hasNumericCharacters === false &&
+    hasLowerCasedCharacters === false &&
+    hasUpperCasedCharacters === false
+  ) {
+    alert("Must select at least one character type");
+    return;
+  }
+
+  var passwordOptions = {
+    length: length, 
+    hasSpecialCharacters: hasSpecialCharacters,
+    hasNumericCharacters: hasNumericCharacters,
+    hasLowerCasedCharacters: hasLowerCasedCharacters,
+    hasUpperCasedCharacters: hasUpperCasedCharacters
+  };
+
+  return passwordOptions;
 }
+
+
 
 
 
